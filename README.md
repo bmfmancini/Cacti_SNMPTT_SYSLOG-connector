@@ -17,6 +17,6 @@ i.e
 
 EVENT Uptime .1.3.6.1.4.1.7342.0.153  "Status Events" Normal
 FORMAT Device reinitialized (coldStart)
-EXEC /opt/snmptt_syslog.py --hostname $aA --alert 'Device reinitialized (coldStart)' --priority 6  --facility 23
+EXEC /opt/snmptt_syslog.py --hostname $aA --alert "$Fz"  --priority 6  --facility 2
 SDESC
 
