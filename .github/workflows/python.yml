@@ -39,12 +39,12 @@ jobs:
 
       - name: Run unit tests
         if: matrix.check == 'tests'
-        run: python -m unittest discover -s tests -v
+        run: python -m unittest discover -s snmptt_connector/tests -v
 
       - name: Run Pylint
         if: matrix.check == 'pylint'
-        run: python -m pylint cacti_snmptt.py tests/test_connector.py
+        run: python -m pylint snmptt_connector/cacti_snmptt.py snmptt_connector/tests/test_connector.py
 
       - name: Run mypy
         if: matrix.check == 'mypy'
-        run: python -m mypy cacti_snmptt.py tests/test_connector.py
+        run: python -m mypy snmptt_connector/cacti_snmptt.py snmptt_connector/tests/test_connector.py
