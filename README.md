@@ -6,6 +6,9 @@ root with `python3 -m pip install -r requirements.txt`. Copy
 `snmptt_connector/.env.dist` to `snmptt_connector/.env`, then configure the
 database credentials and logging settings. The script loads `.env` beside it.
 
+See [snmptt_example_configs](snmptt_example_configs/README.md) for snmptrapd,
+SNMPTT daemon settings, event definitions, and a smoke-test command.
+
 
 SNMPTT is a great tool to convert traps sent to SNMPTRAPD to readable messeges
 as SNMPTT runs on the local system all syslog  messeges will be displayed as if they come from the local system
