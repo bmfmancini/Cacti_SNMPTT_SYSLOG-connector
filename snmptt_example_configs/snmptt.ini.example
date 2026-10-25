@@ -1,0 +1,17 @@
+# Merge these settings into the matching sections of your packaged snmptt.ini.
+# This is a fragment, not a replacement for the full configuration.
+[General]
+mode = daemon
+
+[DaemonMode]
+spool_directory = /var/spool/snmptt/
+
+[Exec]
+exec_enable = 1
+exec_escape = 1
+
+[TrapFiles]
+# Add this path to the EXISTING list; retain your other event files.
+snmptt_conf_files = <<END
+/etc/snmp/snmptt.connector.conf
+END

@@ -29,17 +29,7 @@ parser.add_argument('--hostname', help = "Device Hostname", required=True)
 parser.add_argument('--alert', help = "Alert Messege", required=True)
 parser.add_argument('--facility', help = "Alert Facility", required=True)
 parser.add_argument('--priority', help = "Alert Priority", required=True)
-
-
-
 args = parser.parse_args(sys.argv[1:])
-
-if args.hostname is not None: ({'device Hostname': args.hostname}) 
-if args.alert is not None: ({'Alert Messege': args.alert})
-if args.facility is not None: ({'Alert facility': args.facility})
-if args.priority is not None: ({'Alert priority': args.priority})
-
-
 
 ### connect to database
 db = None
@@ -61,6 +51,7 @@ try:
     val = (args.facility,args.priority, "traps", datetime.now(),args.hostname, args.alert)
     cursor.execute(sql, val)
     db.commit()
+    logger.info("Successfully wrote to database")
 except (mariadb.Error, KeyError):
     if db is not None:
         db.rollback()

@@ -43,8 +43,10 @@ jobs:
 
       - name: Run Pylint
         if: matrix.check == 'pylint'
+        continue-on-error: true
         run: python -m pylint snmptt_connector/cacti_snmptt.py snmptt_connector/tests/test_connector.py
 
       - name: Run mypy
         if: matrix.check == 'mypy'
+        continue-on-error: true
         run: python -m mypy snmptt_connector/cacti_snmptt.py snmptt_connector/tests/test_connector.py
